@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const InputWrapper = styled.form`
@@ -22,12 +21,10 @@ const InputWrapper = styled.form`
   }
 `;
 
-function WordInput({ handleGuess, gameOver }) {
-  const [guess, setGuess] = React.useState("");
-
+function WordInput({ guess, setGuess, handleNewGuess, gameOver }) {
   function handleSubmit(e) {
     e.preventDefault();
-    handleGuess(guess);
+    handleNewGuess(guess);
     setGuess("");
   }
 

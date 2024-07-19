@@ -29,7 +29,19 @@ const StyledBanner = styled.div`
     `}
 `;
 
-function Banner({ type, answer, numGuesses }) {
+const Button = styled.button`
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0 0;
+  border: none;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+function Banner({ type, answer, numGuesses, handleRestart }) {
   return (
     <StyledBanner $type={type}>
       <p>
@@ -44,6 +56,7 @@ function Banner({ type, answer, numGuesses }) {
           </>
         )}
       </p>
+      <Button onClick={handleRestart}>Play Again</Button>
     </StyledBanner>
   );
 }

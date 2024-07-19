@@ -1,5 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 
+import { sample } from "./utils";
+import { WORDS } from "./data";
 import Header from "./components/Header";
 import Game from "./components/Game";
 
@@ -21,11 +24,14 @@ const GameWrapper = styled.div`
 `;
 
 function App() {
+  // NOTE: This would be better on a useEffect hook.
+  const [answer, setAnswer] = React.useState(() => sample(WORDS));
+  console.dir({ answer });
   return (
     <Wrapper>
       <Header />
       <GameWrapper>
-        <Game />
+        <Game answer={answer} setAnswer={setAnswer} />
       </GameWrapper>
     </Wrapper>
   );

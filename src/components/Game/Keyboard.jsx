@@ -1,8 +1,6 @@
-import React from "react";
 import styled, { css } from "styled-components";
 
 import { checkGuess } from "../../helpers/game-helpers";
-import { KEYBOARD_STATUS } from "../../constants";
 
 const KeyboardRow = styled.div`
   display: flex;
@@ -40,9 +38,7 @@ const KeyWrapper = styled.button`
     `}
 `;
 
-function Keyboard({ guess, answer }) {
-  // This ref will be updated with the status of each key as the user enters guesses.
-  const usedLetters = React.useRef(KEYBOARD_STATUS);
+function Keyboard({ guess, answer, handleGuess, usedLetters }) {
   // I need to know the state of each key, but only for the current guess.
   const checkedGuess = checkGuess(guess, answer);
   // Then, I need to add those letters and their state to the usedLetters ref.
@@ -58,14 +54,16 @@ function Keyboard({ guess, answer }) {
 
   const rows = [firstRow, secondRow, thirdRow];
 
-  // console.log(rows.map((row) => row.map(([key, value]) => value)));
-
   return (
     <div>
       {rows.map((row, index) => (
         <KeyboardRow key={index}>
           {row.map(([label, status]) => (
-            <KeyWrapper $status={status} key={label}>
+            <KeyWrapper
+              $status={status}
+              key={label}
+              onClick={(e) => handleGuess(e)}
+            >
               {label}
             </KeyWrapper>
           ))}
