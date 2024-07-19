@@ -1,8 +1,17 @@
-# React + Vite
+# Hollow-Wordle
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A really simple, Hollow Knight inspired Wordle clone.
 
-Currently, two official plugins are available:
+Made with React and Styled Components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Play it here](https://hollow-wordle.netlify.app/)
+
+![Hollow Wordle](docs/img/hollow-wordle.png)
+
+## TODO
+
+- [x] Add a visual keyboard
+- [x] Add a reset button
+- [ ] Listen for keystrokes on the window so that the user can type without clicking on the input
+- [ ] Add a timer
+- [ ] Add a score system
