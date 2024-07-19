@@ -38,7 +38,7 @@ function Game() {
           numGuesses={guesses.length}
         />
       )}
-      <Keyboard />
+      <Keyboard guess={guesses[guesses.length - 1]} answer={answer} />
     </>
   );
 }
