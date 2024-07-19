@@ -4,7 +4,7 @@ A really simple, Hollow Knight inspired Wordle clone.
 
 Made with React and Styled Components.
 
-[Play it here](https://hollow-wordle.netlify.app/)
+[Play it here](https://wordle-hollow-knight.vercel.app/)
 
 ![Hollow Wordle](docs/img/hollow-wordle.png)
 
